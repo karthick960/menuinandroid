@@ -12,20 +12,93 @@ Latest Version Android Studio
 
 ## ALGORITHM:
 
+Step 1: Open Android Studio and then click on File -> New -> New project.
+
+Step 2: Then type the Application name as HelloWorld and click Next.
+
+Step 3: Then select the Minimum SDK as shown below and click Next.
+
+Step 4: Then select the Empty Activity and click Next. Finally click Finish.
+
+Step 5: Design layout in activity_main.xml.
+
+Step 6: Display message give in MainActivity file.
+
+Step 7: Save and run the application.
 
 
 ## PROGRAM:
 ```
-/*
 Program to print the text “optionmenu”.
-Developed by:
-Registeration Number :
-*/
+Developed by: Karthick k
+Registeration Number : 212222040070
 ```
+## In activity_main.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="Options Menu Example"
+        app:titleTextColor="@android:color/white" />
+
+</RelativeLayout>
+```
+## In menu/option.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_item1"
+        android:title="Item 1" />
+    <item
+        android:id="@+id/action_item2"
+        android:title="Item 2" />
+    <item
+        android:id="@+id/action_item3"
+        android:title="Item 3" />
+</menu>
+```
+## In MainActivity.java
+```java
+package com.example.menuinandroid;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Set the toolbar as the action bar
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option, menu);
+        return true;
+    }
+}
+```
 ## OUTPUT
-
-
+![Screenshot 2024-05-07 223018](https://github.com/karthick960/menuinandroid/assets/121215938/1e03ad84-4601-412f-a5d7-7bdac64155e5)
 
 
 ## RESULT
